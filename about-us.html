@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FineThread Clothing</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+html {
+  scroll-behavior: smooth;
+}
+header.scrolled {
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  background: white;
+}
+/* SCROLL ANIMATION BASE */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* HOVER EFFECTS */
+.project-grid img,
+.product-card img {
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.project-grid img:hover,
+.product-card img:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* BUTTON HOVER */
+button {
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+/* PARALLAX HERO FEEL */
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  color: #222;
+}
+
+/* NAVBAR */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background: white;
+  position: fixed;
+  width: 93%;
+  z-index: 100;
+  border-bottom: 1px solid #eee;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 40px;
+}
+
+div a{ 
+	text-decoration: none;
+	color: #333;
+	font-size: 20px;
+}
+
+
+nav a {
+  margin: 0px 15px;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+
+.cta-btn {
+  padding: 15px 30px;
+  border-radius: 30px;
+  border-color: black;
+  background: white;
+  color: black;
+}
+
+
+/* ABOUT SECTION */
+.about-section {
+  display: flex;
+  padding: 100px 80px;
+  gap: 30px;
+}
+
+
+.aboutus h2 {
+font-size: 70px;
+  font-weight: 500;
+  max-width: 650px;
+  text-align:left;
+  font-family: verdana;
+}
+.aboutus h3 {
+font-size: 30px;
+  font-weight: 500;
+  max-width: 650px;
+  font-family: verdana;
+  text-align: right;
+}
+
+div.div1 {
+        float: left;
+        height: 950px;
+		margin-top:10px;
+        margin-right: 10px;
+        width: 650px;
+  
+    }
+    div.div2 {
+        clear: left;
+        float: left;
+        height: 1500px;
+        width: 650px;
+        margin-top: 10px;
+		font-family:Bell MT;
+		letter-spacing:1px;
+		word-spacing: 2px;
+		line-height:1.3;
+    }    
+
+/* STATS */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+}
+
+.stat-box {
+  padding: 40px;
+  border: 1px solid #eee;
+}
+
+.stat-box h3 {
+  font-size: 40px;
+}
+
+/* PROJECTS */
+.projects {
+  padding: 100px 80px;
+}
+
+.projects h2 {
+  font-family: 'Playfair Display', serif;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.project-grid img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+/* PRODUCTS */
+.products {
+  padding: 100px 80px;
+}
+
+.product-row {
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
+}
+
+.product-card {
+  min-width: 300px;
+  text-align: center;
+}
+
+.product-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+/* FOOTER */
+footer {
+  padding: 40px;
+  text-align: center;
+  background: #111;
+  color: white;
+}
+
+/* MOBILE */
+@media(max-width: 768px) {
+  .about-section {
+    flex-direction: column;
+  }
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">
+    <a href="index.html"><img src="mahek123-logo.png"></a>
+	<a href="index.html"><strong>FINETHREAD CLOTHING</strong></a>
+	
+  </div>
+
+  <nav>
+    <a href="index.html">HOME</a>
+    <a href="about-us.html">ABOUT US</a>
+    <a href="products.html">PRODUCTS</a>
+    <a href="#">INFRASTRUCTURE</a>
+  </nav>
+
+  <a href="tel:+917875384000"><button class="cta-btn">CONTACT US</button>
+  </a>
+</header>
+
+<!-- ABOUT -->
+<section class="about-section fade-up">
+  <div class="div1">
+  
+  <section class="aboutus"> 
+    <h4>ABOUT US</h4>
+	<h2>FINETHREAD CLOTHING</h2>
+    <h3>By SAGAR SYNTHETICS</h3>
+	<br/>
+	<hr>
+	<br/>
+	<br/>
+	<img src="mahek123-6.jpg" height="700" width="650"> </img>
+</section>
+</div>
+<div class="div2">
+    <p>
+At Fine Thread Clothing, we believe fabric is more than material — it is identity, confidence, and craftsmanship woven together.
+</p>
+<p>
+Founded with a passion for premium textiles, our brand is built on the philosophy that true luxury lies in quality, detail, and timeless design. Every thread we select, every weave we curate, and every finish we deliver reflects our commitment to excellence.
+</p>
+<p>
+We specialize in high-grade fabrics and refined clothing designed for individuals who value sophistication and durability. Our collections are crafted for premium buyers, entrepreneurs, and professionals who understand that style is an investment — not an expense.
+</p>
+<p>
+What sets us apart is our uncompromising approach to quality:
+</p>
+<p>
+• Carefully sourced superior cotton and premium blends
+</p>
+<p>
+• Precision weaving and finishing</p>
+<p>
+• Minimal yet powerful design aesthetics</p><p>
+• Rich, elegant color palettes</p><p>
+• Fabric that feels as exceptional as it looks
+</p>
+<p>
+Fine Thread Clothing is not about fast fashion. It is about timeless pieces, premium textures, and understated luxury.
+</p>
+<p>
+We are here for those who choose refinement over noise.
+</p>
+<p>
+For those who believe details define distinction.</p>
+<p>
+For those who wear confidence — effortlessly.
+</p>
+<p>
+Fine Thread Clothing
+Crafted with precision. Worn with purpose.
+</p>
+<p>
+OUR SERVICES
+</p>
+<p>
+This is the space to introduce visitors to the business or brand. Briefly explain who's behind it, what it does and what makes it unique. Share its core values and what this site has to offer.
+</p>
+<p>
+EXPERIENCE
+</p>
+<p>
+This is the space to introduce visitors to the business or brand. Briefly explain who's behind it, what it does and what makes it unique. Share its core values and what this site has to offer.
+</p>
+<p>
+ACCOUNTABILITY
+</p>
+<p>
+This is the space to introduce visitors to the business or brand. Briefly explain who's behind it, what it does and what makes it unique. Share its core values and what this site has to offer.</p>
+</p>
+</section>
+	<br></br>
+	</section>
+
+<footer>
+  <p>© 2026 FineThread Clothing</p>
+</footer>
+<script>
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+});
+
+document.querySelectorAll('.fade-up').forEach(el => {
+  observer.observe(el);
+});
+window.addEventListener("scroll", () => {
+  const header = document.querySelector("header");
+  header.classList.toggle("scrolled", window.scrollY > 50);
+});
+</script>
+
+</body>
+</html>
