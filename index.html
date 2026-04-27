@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FineThread Clothing</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+html {
+  scroll-behavior: smooth;
+}
+header.scrolled {
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  background: white;
+}
+/* SCROLL ANIMATION BASE */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* HERO TEXT ANIMATION */
+.hero h1 {
+  animation: fadeInUp 1.2s ease forwards;
+}
+
+.hero button {
+transition: transform .2s;
+}
+.hero button:hover{
+	transform: scale(1.1);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* HOVER EFFECTS */
+.product-grid img,
+.product-card img {
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.product-grid img:hover,
+.product-card img:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+nav a:hover{
+	text-decoration:underline;
+}
+
+
+
+/* BUTTON HOVER */
+button {
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+/* PARALLAX HERO FEEL */
+.hero {
+  background-attachment: fixed;
+}
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  color: #222;
+}
+
+/* NAVBAR */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background: white;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  z-index: 100;
+  border-bottom: 1px solid #eee;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 40px;
+}
+
+div a{ 
+	text-decoration: none;
+	color: #333;
+	font-size: 20px;
+}
+
+
+nav a {
+  margin: 0px 15px;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+
+.cta-btn {
+  padding: 15px 30px;
+  border-radius: 30px;
+  border-color: black;
+  background: white;
+  color: black;
+}
+
+header.a{
+text-decoration:none;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  background: url('mahek123-1.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  padding: 0 80px;
+  color: white;
+}
+
+.hero h1 {
+  font-size: 70px;
+  font-weight: 300;
+  max-width: 600px;
+}
+
+.hero button {
+  margin-top: 20px;
+  padding: 15px 30px;
+  border-radius: 30px;
+  border: none;
+  background: #2c2c2c;
+  color: white;
+}
+.hero {
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+}
+
+.hero > div {
+  position: relative;
+  z-index: 2;
+}
+
+/* ABOUT SECTION */
+.about-section {
+  display: flex;
+  padding: 100px 80px;
+  gap: 50px;
+}
+
+.about-section button{
+  border-radius: 30px;
+  border: none;
+  background: white;
+  color: white;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text h2 {
+font-size: 70px;
+  font-weight: 300;
+  max-width: 500px;
+  font-family: verdana;
+}
+
+.about-text p {
+font-size: 20px;
+  font-weight: 20;
+  line-height: 1.8;
+  max-width: 500px;
+  font-family: arial;
+}
+
+.about-image {
+  flex: 1;
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* STATS */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+}
+
+.stat-box {
+  padding: 40px;
+  border: 1px solid #eee;
+}
+
+.stat-box h3 {
+  font-size: 40px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.product-grid img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+/* PRODUCTS */
+.products {
+  padding: 100px 80px;
+}
+
+.product-row {
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
+}
+
+.product-card {
+  min-width: 300px;
+  text-align: center;
+}
+
+.product-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+/* FOOTER */
+footer {
+  padding: 40px;
+  text-align: center;
+  background: #111;
+  color: white;
+}
+
+/* MOBILE */
+/* TABLET */
+@media (max-width: 768px) {
+
+  /* NAVBAR */
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+    gap: 10px;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  nav a {
+    margin: 0;
+    font-size: 13px;
+  }
+
+  .cta-btn {
+	align-items: center;
+    padding: 8px 16px;
+    font-size: 10px;
+  }
+
+  /* HERO */
+  .hero {
+  
+    padding: 20px 20px;
+    height: 90vh;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+
+  /* ABOUT SECTION */
+  .about-section {
+    flex-direction: column; /* 🔥 KEY FIX */
+    padding: 60px 20px;
+  }
+
+  .about-text h2 {
+    font-size: 32px;
+  }
+
+  .about-text p {
+    font-size: 15px;
+  }
+
+  .about-image img {
+    height: 250px;
+  }
+
+  /* STATS */
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  /* PRODUCTS */
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-card img {
+    height: 220px;
+  }
+  .product-grid img,
+.product-card img {
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.product-grid img:hover,
+.product-card img:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+nav a:hover{
+	text-decoration:underline;
+}
+
+  section {
+    padding: 60px 20px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">
+    <a href="index.html"><img src="mahek123-logo.png"></a>
+	<a href="index.html"><strong>FINETHREAD CLOTHING</strong></a>
+	
+  </div>
+
+  <nav>
+    <a href="#">HOME</a>
+    <a href="about-us.html">ABOUT US</a>
+    <a href="#">PRODUCTS</a>
+    <a href="#">INFRASTRUCTURE</a>
+  </nav>
+
+	
+  <a href="tel:+917875384000"><button class="cta-btn">CONTACT US</button>
+  </a>
+
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <h1>Luxury in Every Thread</h1>
+    <a href="tel:+91787538400">
+		<button>CONTACT US</button>
+	</a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section fade-up">
+  <div class="about-text">
+    <h4>ABOUT OUR COMPANY</h4>
+    <h2>Sagar Synthetics</h2>
+    <p>
+      At Sagar Synthetics, we believe fabric is more than material — it is identity, confidence, and craftsmanship woven together.
+
+Founded with a passion for premium textiles, our brand is built on the philosophy that true luxury lies in quality, detail, and timeless design. Every thread we select, every weave we curate, and every finish we deliver reflects our commitment to excellence.
+    </p>
+	
+    <button style="font-weight: bold;"><a href="about-us.html">READ MORE <a> </button>
+	
+	<br></br>
+<!-- STATS -->
+<section class="stats fade-up">
+	
+	<div class="stat-box fade-up delay-1">
+    <h3>48</h3>
+    <p>Years Experience</p>
+  </div>
+  <div class="stat-box fade-up delay-2">
+    <h3>282</h3>
+    <p>Clients</p>
+  </div>
+  <div class="stat-box fade-up delay-3">
+    <h3>35</h3>
+    <p>Products</p>
+  </div>
+ </section>
+  </div>
+
+  <div class="about-image">
+    <img src="mahek123-2.jpg">
+  </div>
+  
+</section>
+
+
+<!-- PRODUCTS -->
+<section class="products fade-up">
+  <h2>Featured Products</h2>
+
+  <div class="product-grid">
+	<div class="product-card fade-up delay-1">
+      <img src="mahek123-3.jfif">
+      <p>Cotton</p>
+    </div>
+    <div class="product-card fade-up delay-2">
+      <img src="mahek123-4.jfif">
+      <p>Linen</p>
+    </div>
+
+    <div class="product-card fade-up delay-3">
+      <img src="mahek123-5.jfif">
+      <p>Blends</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 FineThread Clothing</p>
+</footer>
+<script>
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+});
+
+document.querySelectorAll('.fade-up').forEach(el => {
+  observer.observe(el);
+});
+window.addEventListener("scroll", () => {
+  const header = document.querySelector("header");
+  header.classList.toggle("scrolled", window.scrollY > 50);
+});
+</script>
+
+</body>
+</html>
