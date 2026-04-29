@@ -50,6 +50,10 @@ header.scrolled {
   opacity: 0.9;
 }
 
+nav a:hover{
+	text-decoration:underline;
+}
+
 /* BUTTON HOVER */
 button {
   transition: all 0.3s ease;
@@ -76,6 +80,7 @@ header {
   background: white;
   position: fixed;
   width: 93%;
+  left:0;
   z-index: 100;
   border-bottom: 1px solid #eee;
 }
@@ -112,6 +117,10 @@ nav a {
   color: black;
 }
 
+header.a{
+text-decoration:none;
+}
+
 
 /* ABOUT SECTION */
 .about-section {
@@ -137,84 +146,29 @@ font-size: 30px;
 }
 
 div.div1 {
-        float: left;
-        height: 950px;
+        flex:1;
+		min-width:0;
 		margin-top:10px;
         margin-right: 10px;
-        width: 650px;
   
     }
-    div.div2 {
+    
+div.div2 {
         clear: left;
-        float: left;
-        height: 1500px;
-        width: 650px;
+		flex: 1;
+  min-width: 0;
         margin-top: 10px;
 		font-family:Bell MT;
 		letter-spacing:1px;
 		word-spacing: 2px;
 		line-height:1.3;
-    }    
+    }  
 
-/* STATS */
-.stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  text-align: center;
-}
-
-.stat-box {
-  padding: 40px;
-  border: 1px solid #eee;
-}
-
-.stat-box h3 {
-  font-size: 40px;
-}
-
-/* PROJECTS */
-.projects {
-  padding: 100px 80px;
-}
-
-.projects h2 {
-  font-family: 'Playfair Display', serif;
-}
-
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  margin-top: 40px;
-}
-
-.project-grid img {
+.div1 img {
   width: 100%;
-  height: 300px;
-  object-fit: cover;
-}
+  height: auto;
+}	
 
-/* PRODUCTS */
-.products {
-  padding: 100px 80px;
-}
-
-.product-row {
-  display: flex;
-  gap: 30px;
-  overflow-x: auto;
-}
-
-.product-card {
-  min-width: 300px;
-  text-align: center;
-}
-
-.product-card img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-}
 
 /* FOOTER */
 footer {
@@ -224,19 +178,63 @@ footer {
   color: white;
 }
 
+
 /* MOBILE */
-@media(max-width: 768px) {
-  .about-section {
+@media (max-width: 768px) {
+
+   header {
     flex-direction: column;
-  }
-  .project-grid {
-    grid-template-columns: 1fr;
-  }
-  .stats {
-    grid-template-columns: 1fr;
+    padding: 10px 20px;
+    gap: 10px;
   }
 
+ nav {
+    display: flex;
+    flex-wrap: wrap;
+	justify-content:center;
+    gap: 10px;
+  }
+  
+nav a {
+    margin: 0;
+    font-size: 13px;
+  }
+  
+  .cta-btn {
+    padding: 20px 16px;
+    font-size: 10px;
+  }
+
+  .about-section {
+	
+    flex-direction: column;
+    padding: 140px 20px;
+  }
+
+  .div1, .div2 {
+    width: 100%;
+  }
+
+  .aboutus h2 {
+    font-size: 32px;
+  }
+
+  .aboutus h3 {
+    font-size: 16px;
+    text-align: left;
+  }
+  
+  nav a:hover{
+	text-decoration:underline;
 }
+
+  .div2 p {
+    font-size: 14px;
+  }
+  
+
+}
+
 
 
 
@@ -255,11 +253,11 @@ footer {
   <nav>
     <a href="index.html">HOME</a>
     <a href="about-us.html">ABOUT US</a>
-    <a href="products.html">PRODUCTS</a>
+    <a href="#">PRODUCTS</a>
     <a href="#">INFRASTRUCTURE</a>
   </nav>
 
-  <a href="tel:+917875384000"><button class="cta-btn">CONTACT US</button>
+  <a href="contact-us.html"><button class="cta-btn">CONTACT US</button>
   </a>
 </header>
 
@@ -275,7 +273,7 @@ footer {
 	<hr>
 	<br/>
 	<br/>
-	<img src="mahek123-6.jpg" height="700" width="650"> </img>
+	<img src="mahek123-6.jpg"> </img>
 </section>
 </div>
 <div class="div2">
